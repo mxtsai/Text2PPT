@@ -1,6 +1,11 @@
 # Text2PPT Program
 Generates a PPT file for worship use in less than 5 seconds.
 
+Watch this short clip for how it works:
+
+https://user-images.githubusercontent.com/31272872/174447465-18bfabce-86af-4bdd-8223-297249268893.mov
+
+
 ## Computer Setup
 1. Download and install Python from here: https://www.python.org/downloads/
 2. If on Windows Device, open up Command Prompt (type Windows Key + X), and pase the following code: `py -m pip install python-pptx`
