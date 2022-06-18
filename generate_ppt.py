@@ -65,7 +65,8 @@ Drag the txt file with the lyrics to this program, and it will generate a pptx f
 
     try:
         
-        song_file = input(input_message).strip().lstrip('\"').rstrip('\"')
+        song_file = input(input_message).strip().lstrip('\"').rstrip('\"').replace("\\", "")
+        song_file = os.path.abspath(song_file)
 
         if song_file:
             lines_per_slide = int(input("\nPlease specify the number of lines to print on each slide:\n").strip())
@@ -73,10 +74,11 @@ Drag the txt file with the lyrics to this program, and it will generate a pptx f
             file_dir, file_name = os.path.split(song_file)
 
             # extract lyrics
-            lyrics_list = extract_lyrics(song_file, lines_per_slide = 2)
+            lyrics_list = extract_lyrics(song_file, lines_per_slide=lines_per_slide)
 
             # generate PPT
-            save_path = f"{file_dir}/{file_name.split('.')[0]}.pptx"
+            filename_out = (file_name.split('.')[0])
+            save_path = f"{file_dir}/{filename_out}.pptx"
             generate_lyrics_ppt(lyrics_list, save_path)
             print("PPT successfully generated. Check the file at:", save_path)
 
