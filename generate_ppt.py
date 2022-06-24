@@ -14,7 +14,7 @@ def extract_lyrics(lyrics_text_file, lines_per_slide = 1):
             cur_line_count = 1
             cur_line_txt = ""   # to append any text
             for l in line:
-                line_text = l.strip()
+                line_text = l.strip().upper().title()
 
                 if line_text:   # if have string content
                     if cur_line_count >= lines_per_slide:   # if have enough lines
